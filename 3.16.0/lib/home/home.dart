@@ -28,6 +28,13 @@ class Home extends StatelessWidget {
               icon: const Icon(Icons.calculate),
               label: const Text('Contador com State Class (counter)'),
             ),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).pushNamed('crud-packageless');
+              },
+              icon: const Icon(Icons.person),
+              label: const Text('Crud com BloC (packageless)'),
+            ),
           ],
         ),
       ),
