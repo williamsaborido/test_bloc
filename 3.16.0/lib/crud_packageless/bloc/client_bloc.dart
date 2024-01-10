@@ -21,6 +21,8 @@ class ClientBloc {
   void _mapEventToState(ClientEvent event) async {
     List<Client> clients = [];
 
+    _outputController.add(ClientLoadingState());
+
     switch (event) {
       case LoadClientEvent():
         clients = await _repository.loadClients();

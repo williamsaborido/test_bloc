@@ -18,7 +18,6 @@ class _CrudPackagelessState extends State<CrudPackageless> {
   @override
   void initState() {
     super.initState();
-
     bloc = ClientBloc();
     bloc.input.add(LoadClientEvent());
   }
@@ -63,6 +62,14 @@ class _CrudPackagelessState extends State<CrudPackageless> {
             stream: bloc.stream,
             builder: (context, snapshot) {
               final list = snapshot.data?.clients ?? [];
+
+              if (snapshot.data is ClientLoadingState){
+                return const Center(child: CircularProgressIndicator());
+              }
+
+              if (snapshot.data is ClientSuccessState && list.isEmpty){
+                return const Center(child: Icon(Icons.search));
+              }
 
               return ListView.separated(
                 itemCount: list.length,
