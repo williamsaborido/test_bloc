@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test/counter_cubit/counter.dart';
 import 'package:test/counter_state_cubit.dart/counter_state.dart';
+import 'package:test/crud_package/views/crud_package.dart';
 import 'package:test/crud_packageless/views/crud_packageless.dart';
 import 'package:test/home/home.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         'counter-cubit': (context) => Counter(),
         'counter-state-cubit': (context) => CounterState(),
         'crud-packageless': (context) => const CrudPackageless(),
+        'crud-package': (context) => const CrudPackage(),
       },
     );
   }

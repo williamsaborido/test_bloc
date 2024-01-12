@@ -35,6 +35,13 @@ class Home extends StatelessWidget {
               icon: const Icon(Icons.person),
               label: const Text('Crud com BloC (packageless)'),
             ),
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.of(context).pushNamed('crud-package');
+              },
+              icon: const Icon(Icons.person),
+              label: const Text('Crud com BloC (package)'),
+            ),
           ],
         ),
       ),
